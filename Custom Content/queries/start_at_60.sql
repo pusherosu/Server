@@ -882,6 +882,16 @@ VALUES(
     '1', 
     '0'
 );
+INSERT IGNORE INTO eqemu.spawnentry(
+	spawngroupID, 
+    npcID, 
+    chance
+)
+VALUES(
+	(SELECT id FROM eqemu.spawngroup WHERE name LIKE '%poknowledge-Herald_of_Veeshan000%'), 
+    (SELECT id FROM eqemu.npc_types WHERE name LIKE '%Herald_of_Veeshan%'), 
+    '100'
+);
 
 # Add tome to starting equipment
 INSERT IGNORE INTO eqemu.starting_items(
